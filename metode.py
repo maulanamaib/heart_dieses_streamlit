@@ -14,7 +14,7 @@ def normalisasi(x):
     data_test = data_test.append(other=df,ignore_index=True)
     # print(data_test)
     # return data_test yang sudah dinormalisasi
-    return joblib.load('model/norm1.sav').fit_transform(data_test)
+    return joblib.load('model/norm.sav').fit_transform(data_test)
 
 # normals
 def normal(x):
