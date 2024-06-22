@@ -3,8 +3,7 @@ import streamlit as st
 import metode
 import time
 import pandas as pd
-def min_max_scaling(value, min_value, max_value):
-    return 0.1 + (value - min_value) * 0.9 / (max_value - min_value)
+
 # pige title
 st.set_page_config(
     page_title="Prediksi Penyakit Jantung",
@@ -78,17 +77,8 @@ if home==False and about==False or home==True and about==False:
                 else:
                     pa, peAlk, diffw, diabet, AktF = 1, 1, 1, 1, 1
                     # normalisasi data
-                data = [
-                min_max_scaling(bmi, 0, 10000),
-                min_max_scaling(pa, 0, 10000),
-                min_max_scaling(peAlk, 0, 10000),
-                min_max_scaling(kesfis, 0, 1000),
-                min_max_scaling(kesMen, 0, 1000),
-                min_max_scaling(diffw, 0, 1000),
-                min_max_scaling(diabet, 0, 1000),
-                min_max_scaling(AktF, 0, 1000),
-                ]
-                datanorm = metode.normalisasi(data)
+                
+                datanorm = metode.normalisasi([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
                     # prediksi data
                 # print([bmi])
                
