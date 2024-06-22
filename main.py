@@ -87,7 +87,7 @@ if home==False and about==False or home==True and about==False:
                 min_max_scaling(diffw, 0, 1000),
                 min_max_scaling(diabet, 0, 1000),
                 min_max_scaling(AktF, 0, 1000),
-            ]
+                ]
                 datanorm = metode.normalisasi(data)
                     # prediksi data
                 # print([bmi])
