@@ -1,9 +1,8 @@
 # import libary 
 import streamlit as st
-import metode
 import time
 import pandas as pd
-
+import metode
 # pige title
 st.set_page_config(
     page_title="Prediksi Penyakit Jantung",
