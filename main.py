@@ -61,9 +61,6 @@ if home==False and about==False or home==True and about==False:
         diabet = st.selectbox("Penderita diabetes",('Iya','Tidak'))
     with col10:
         AktF = st.selectbox("Aktivitas fisik",('Iya','Tidak'))
-
-    
-    
     
     #    Centering Butoon 
     columns = st.columns((2, 0.6, 2))
@@ -78,11 +75,11 @@ if home==False and about==False or home==True and about==False:
                     pa, peAlk, diffw, diabet, AktF = 1, 1, 1, 1, 1
                     # normalisasi data
                 
-                datanorm = metode.normalisasi([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
+                data = metode.normalisasi([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
                     # prediksi data
                 # print([bmi])
                
-                prediksi = metode.knn(datanorm)
+                prediksi = metode.knn(data)
                 # print(prediksi)       
                  # cek prediksi
                 with st.spinner("Tunggu Sebentar Masih Proses..."):
