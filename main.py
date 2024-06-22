@@ -71,7 +71,7 @@ if home==False and about==False or home==True and about==False:
                 pa, peAlk, diffw, diabet, AktF = (0 if val == 'Iya' else 1 for val in [pa, peAlk, diffw, diabet, AktF])
                     # normalisasi data
                 
-                data = metode.normalisasi([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
+                data = metode.normalisasi(bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF)
                     # prediksi data
                 # print([bmi])
                
@@ -90,7 +90,7 @@ if home==False and about==False or home==True and about==False:
             else:
                 pa, peAlk, diffw, diabet, AktF = (0 if val == 'Iya' else 1 for val in [pa, peAlk, diffw, diabet, AktF])
                     # normalisasi data
-                data = metode.normal([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
+                data = metode.normal(bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF)
                     # prediksi data
                 # print([bmi])
                 # print(pd.DataFrame(data))
