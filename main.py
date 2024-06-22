@@ -67,10 +67,7 @@ if home==False and about==False or home==True and about==False:
 
     if submit and nama != '' and diffw !='' and diabet !='' and AktF !=''  and jk != '' and pa !='' and peAlk!='' and kesfis !=0 and kesMen !=0 and umur !=0  and bmi !=0 :
             if preprosesing == 'Normalization (Min-Max)':
-                if pa == 'Iya' and peAlk == 'Iya' and diffw == 'Iya' and diabet == 'Iya' and AktF == 'Iya':
-                    pa, peAlk, diffw, diabet, AktF= 0, 0, 0, 0, 0
-                else:
-                    pa, peAlk, diffw, diabet, AktF = 1, 1, 1, 1, 1
+                pa, peAlk, diffw, diabet, AktF = (0 if val == 'Iya' else 1 for val in [pa, peAlk, diffw, diabet, AktF])
                     # normalisasi data
                 
                 data = metode.normalisasi([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
@@ -90,10 +87,7 @@ if home==False and about==False or home==True and about==False:
                         time.sleep(1)
                         st.warning(string_temp+" Ada Penyakit Jantung")    
             else:
-                if pa == 'Iya' and peAlk == 'Iya' and diffw == 'Iya' and diabet == 'Iya' and AktF == 'Iya':
-                    pa, peAlk, diffw, diabet, AktF = 0, 0, 0, 0, 0
-                else:
-                    pa, peAlk, diffw, diabet, AktF = 1, 1, 1, 1, 1
+                pa, peAlk, diffw, diabet, AktF = (0 if val == 'Iya' else 1 for val in [pa, peAlk, diffw, diabet, AktF])
                     # normalisasi data
                 data = metode.normal([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
                     # prediksi data
