@@ -27,7 +27,8 @@ st.markdown("<p style='text-align: center; color: white; margin:0 ; padding:0;'>
 kolom = st.columns((2.2, 0.48, 2.7))
 home = kolom[1].button('🏠')
 about = kolom[2].button('About')
-
+def min_max_scaling(value, min_value, max_value):
+    return 0.1 + (value - min_value) * 0.9 / (max_value - min_value)
 # home page
 if home==False and about==False or home==True and about==False:
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
@@ -77,11 +78,21 @@ if home==False and about==False or home==True and about==False:
                 else:
                     pa, peAlk, diffw, diabet, AktF = 1, 1, 1, 1, 1
                     # normalisasi data
-                data = metode.normalisasi([bmi, pa, peAlk ,kesfis, kesMen, diffw, diabet, AktF])
+                data = [
+                min_max_scaling(bmi, 0, 10000),
+                min_max_scaling(pa, 0, 10000),
+                min_max_scaling(peAlk, 0, 10000),
+                min_max_scaling(kesfis, 0, 1000),
+                min_max_scaling(kesMen, 0, 1000),
+                min_max_scaling(diffw, 0, 1000),
+                min_max_scaling(diabet, 0, 1000),
+                min_max_scaling(AktF, 0, 1000),
+            ]
+                datanorm = metode.normalisasi(data)
                     # prediksi data
                 # print([bmi])
                
-                prediksi = metode.knn(data)
+                prediksi = metode.knn(datanorm)
                 # print(prediksi)       
                  # cek prediksi
                 with st.spinner("Tunggu Sebentar Masih Proses..."):
