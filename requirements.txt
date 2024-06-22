@@ -6,3 +6,4 @@ streamlit
 scikit-learn
 streamlit-modal
 numpy
+streamlit-pandas
