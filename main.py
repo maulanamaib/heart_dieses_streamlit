@@ -3,7 +3,8 @@ import streamlit as st
 import metode
 import time
 import pandas as pd
-
+def min_max_scaling(value, min_value, max_value):
+    return 0.1 + (value - min_value) * 0.9 / (max_value - min_value)
 # pige title
 st.set_page_config(
     page_title="Prediksi Penyakit Jantung",
@@ -27,8 +28,7 @@ st.markdown("<p style='text-align: center; color: white; margin:0 ; padding:0;'>
 kolom = st.columns((2.2, 0.48, 2.7))
 home = kolom[1].button('🏠')
 about = kolom[2].button('About')
-def min_max_scaling(value, min_value, max_value):
-    return 0.1 + (value - min_value) * 0.9 / (max_value - min_value)
+
 # home page
 if home==False and about==False or home==True and about==False:
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
