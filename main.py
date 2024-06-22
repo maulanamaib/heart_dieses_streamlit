@@ -1,6 +1,7 @@
 # import libary 
 import streamlit as st
 import time
+import pandas as pd
 import metode
 # pige title
 st.set_page_config(
