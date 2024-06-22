@@ -1,5 +1,5 @@
 pip==24.1
-pandas==2.0.0
+pandas
 joblib==1.3.2
 python-time
 streamlit>=1.28
