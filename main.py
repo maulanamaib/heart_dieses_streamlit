@@ -25,7 +25,7 @@ st.markdown("<p style='text-align: center; color: white; margin:0 ; padding:0;'>
 kolom = st.columns((5, 2, 2.7, 6))
 home = kolom[1].button('🏠')
 about = kolom[2].button('About')
-prediksi = kolom[3].button('prediks')
+prediksi = kolom[3].button('prediksi')
 # home page
 if prediksi==False and about==False and home==False or prediksi==True and about==False and home==False :
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
