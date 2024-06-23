@@ -25,9 +25,9 @@ st.markdown("<p style='text-align: center; color: white; margin:0 ; padding:0;'>
 kolom = st.columns((2.2, 0.48, 2.7))
 home = kolom[1].button('🏠')
 about = kolom[2].button('About')
-
+prediksi = kolom[3].button('prediks')
 # home page
-if home==False and about==False or home==True and about==False:
+if prediksi==False and about==False and home==False or prediksi==True and about==False and home==False :
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
     # setting kolom
     # with st.expander("Setting"):
@@ -107,7 +107,7 @@ if home==False and about==False or home==True and about==False:
         st.error("Harap Diisi Semua Kolom")
 
 # about page
-if about==True and home==False:
+if about==True and home==False and prediksi==False:
     st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
     st.write('Sistem Prediksi Penyakit Jantung adalah sebuah sistem yang bertujuan untuk memprediksi penyakit jantung dini. Sistem ini dibuat menggunakan bahasa pemrograman python dan library streamlit.')
     st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Dataset</h4>", unsafe_allow_html=True)
