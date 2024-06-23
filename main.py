@@ -30,7 +30,8 @@ prediksi = kolom[3].button('prediksi')
 # home page
 if prediksi==False and about==False and home==True or prediksi==False and about==False and home==False :
     st.write('Dataset')
-    df = pd.DataFrame(data_fix1.csv)
+    datas = pd.read_csv(data_fix1.csv)
+    df = pd.DataFrame(datas)
     df
 if prediksi==False and about==False and home==False or prediksi==True and about==False and home==False :
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
