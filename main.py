@@ -30,7 +30,7 @@ prediksi = kolom[3].button('prediksi')
 # home page
 if prediksi==False and about==False and home==True or prediksi==False and about==False and home==False :
     st.write('Dataset')
-    datas = pd.read_csv("data_fix1.csv", delimiter=;)
+    datas = pd.read_csv("data_fix1.csv", sep=";")
     df = pd.DataFrame(datas)
     df
 if prediksi==False and about==False and home==False or prediksi==True and about==False and home==False :
