@@ -21,25 +21,19 @@ header {visibility: hidden;}
 </style>
 
 """
-# insialisasi web
-st.markdown("<p style='text-align: center; color: white; margin:0 ; padding:0;'>MENU</p>", unsafe_allow_html=True)
-kolom = st.columns((2, 2, 8, 8, 7, 8, 7, 8))
-home = kolom[1].button('Dataset')
-normalisasi = kolom[2].button('normalisasi')
-prepocesing = kolom[3].button('prepocesing')
-model = kolom[4].button('model')
-accuracy = kolom[5].button('accuracy')
-about = kolom[6].button('About')
-prediksi = kolom[7].button('prediksi')
 
-# home page
-if prediksi==False and about==False and home==True or prediksi==False and about==False and home==False :
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["Dataset", "Normalisasi", "Prepocesing", "model", "Accuracy", "About", "Prediksi"])
+with tab1:
     st.write('Dataset')
     datas = pd.read_csv("data_fix1.csv", sep=";")
     df = pd.DataFrame(datas)
     df
-    
-if prediksi==False and about==False and home==False or prediksi==True and about==False and home==False :
+with tab2:
+with tab3:
+with tab4:
+with tab5:
+with tab6:
+with tab7:
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
     # setting kolom
     # with st.expander("Setting"):
@@ -117,6 +111,103 @@ if prediksi==False and about==False and home==False or prediksi==True and about=
                         st.warning(string_temp+" Ada Penyakit Jantung")    
     else:
         st.error("Harap Diisi Semua Kolom")
+
+# insialisasi web
+# st.markdown("<p style='text-align: center; color: white; margin:0 ; padding:0;'>MENU</p>", unsafe_allow_html=True)
+# kolom = st.columns((2, 2, 8, 8, 7, 8, 7, 8))
+# home = kolom[1].button('Dataset')
+# normalisasi = kolom[2].button('normalisasi')
+# prepocesing = kolom[3].button('prepocesing')
+# model = kolom[4].button('model')
+# accuracy = kolom[5].button('a`ccuracy')
+# about = kolom[6].button('About')
+# prediksi = kolom[7].button('prediksi')
+
+# home page
+# if prediksi==False and about==False and home==True or prediksi==False and about==False and home==False :
+#     st.write('Dataset')
+#     datas = pd.read_csv("data_fix1.csv", sep=";")
+#     df = pd.DataFrame(datas)
+#     df
+    
+# if prediksi==False and about==False and home==False or prediksi==True and about==False and home==False :
+#     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
+#     # setting kolom
+#     # with st.expander("Setting"):
+
+#     preprosesing = st.radio('Preprocessing Data', options=['Normalization (Min-Max)', 'Normal'], index=0, horizontal=True)
+#     col1, col2 = st.columns(2)
+#     with col1:
+#         nama = st.text_input("Masukkan Nama",placeholder='Nama')
+#     with col2:
+#         umur = st.number_input("Masukkan Umur",max_value=100)
+#     jk = st.selectbox("Jenis Kelamin",('Laki-laki','Perempuan'))
+#     col3,col4 = st.columns(2)
+#     with col3:
+#         bmi = st.number_input("BMI",min_value=0,max_value=10000)
+#     with col4:
+#         pa = st.selectbox("Perokok Aktif",('Iya','Tidak'))
+#     col5,col6 = st.columns(2)
+#     with col5:
+#         peAlk = st.selectbox("Peminum Alkohol",('Iya','Tidak'))
+#     with col6:
+#         kesfis = st.number_input("Kesehatan Fisik",min_value=0,max_value=1000)
+#     col7,col8 = st.columns(2)
+#     with col7:
+#         kesMen = st.number_input("Kesehatan Mental",min_value=0,max_value=1000)
+#     with col8:
+#         diffw = st.selectbox("Diffwalking",('Iya','Tidak'))
+#     col9,col10 = st.columns(2)
+#     with col9:
+#         diabet = st.selectbox("Penderita diabetes",('Iya','Tidak'))
+#     with col10:
+#         AktF = st.selectbox("Aktivitas fisik",('Iya','Tidak'))
+    
+#     #    Centering Butoon 
+#     columns = st.columns((2, 0.6, 2))
+#     submit = columns[1].button("Submit")
+#     # if sumbit == True:
+
+#     if submit and nama != '' and diffw !='' and diabet !='' and AktF !=''  and jk != '' and pa !='' and peAlk!='' and kesfis !=0 and kesMen !=0 and umur !=0  and bmi !=0 :
+#             if preprosesing == 'Normalization (Min-Max)':
+#                 pa, peAlk, diffw, diabet, AktF = (0 if val == 'Iya' else 1 for val in [pa, peAlk, diffw, diabet, AktF])
+#                     # normalisasi data
+                
+#                 data = metode.normalisasi([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
+#                     # prediksi data
+#                 # print([bmi])
+               
+#                 prediksi = metode.knn(data)
+#                 # print(prediksi)       
+#                  # cek prediksi
+#                 with st.spinner("Tunggu Sebentar Masih Proses..."):
+#                     string_temp = (f'{nama} age is {umur} and jenis kelamin {jk}')
+#                     if prediksi[-1] == 0:
+#                         time.sleep(1)
+                        
+#                         st.success(string_temp+" tidak ada penyakit jantung")
+#                     else:
+#                         time.sleep(1)
+#                         st.warning(string_temp+" Ada Penyakit Jantung")    
+#             else:
+#                 pa, peAlk, diffw, diabet, AktF = (0 if val == 'Iya' else 1 for val in [pa, peAlk, diffw, diabet, AktF])
+#                     # normalisasi data
+#                 data = metode.normal([bmi, pa, peAlk, kesfis, kesMen, diffw, diabet, AktF])
+#                     # prediksi data
+#                 # print([bmi])
+#                 # print(pd.DataFrame(data))
+#                 prediksi = metode.knn(data)
+#                         # cek prediksi
+#                 with st.spinner("Tunggu Sebentar Masih Proses..."):
+#                     string_temp = (f'{nama} age is {umur} and jenis kelamin {jk}')
+#                     if prediksi[-1] == 0:
+#                         time.sleep(1)
+#                         st.success(string_temp+" Tidak Ada Penyakit Jantung")
+#                     else:
+#                         time.sleep(1)
+#                         st.warning(string_temp+" Ada Penyakit Jantung")    
+#     else:
+#         st.error("Harap Diisi Semua Kolom")
 
 # about page
 if about==True and home==False and prediksi==False:
