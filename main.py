@@ -38,6 +38,16 @@ with tab5:
     st.write('Accuracy')
 with tab6:
     st.write('About')
+    st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
+    st.write('Sistem Prediksi Penyakit Jantung adalah sebuah sistem yang bertujuan untuk memprediksi penyakit jantung dini. Sistem ini dibuat menggunakan bahasa pemrograman python dan library streamlit.')
+    st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Dataset</h4>", unsafe_allow_html=True)
+    st.markdown("<p  color: white;'>Dataset yang digunakan pada sistem ini memiliki <b>9 fitur</b> termasuk kelas, Dataset yang digunakan dalam sistem ini menggunakan data real yang didapatkan disalah satu puskesmas di kecamatan arosbaya kota bangakalan . Dataset yang berjudul <i>Heart Disease</i>, dataset untuk mendeteksi apakah seseorang mengidap Penyakit Jantung atau tidak berdasarkan berbagai faktor seperti <i>BMI</i>,<i>Perokok Aktif</i>,<i>Peminum Alkohol</i>,<i>Kesehatan Fisik</i>,<i>Kesehatan Mental</i>,<i>DiffWalking</i>,<i>Penderita Diabetes</i>,<i>Aktivitas Fisik</i>,class (0/1), fitur yang disebutkan rata-rata string yang sudah diubah mencajadi kategorikal.</p>", unsafe_allow_html=True)
+    st.write('Untuk Fitur kolestrol bisa didapatkan dengan cara mengecek ke dokter atau dengan cara mengukur sendiri dengan menggunakan alat yang disediakan oleh dokter. Untuk fitur blood pressure bisa didapatkan dengan cara mengecek ke dokter atau dengan cara mengukur sendiri dengan menggunakan alat yang disediakan oleh dokter.')
+    st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Tahap preprosessing</h4>", unsafe_allow_html=True)
+    st.write('Sistem ini menggunakan preprosessing data yaitu dengan normalisasi data. Metode normalisasi yang digunakan adalah MinMaxScaler.')
+    st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Metode yang digunakan</h4>", unsafe_allow_html=True)
+    st.markdown("<p  color: white;'>Pada sistem ini menggunakan model KNN ( <i>K-nearest neighbors algorithm</i> ) dengan parameter <b>K = 11</b> dengan akurasi 75% jika sebelumnya data dinormalisasi terlebih dahulu, namun jika tanpa normalisasi akurasi yang didapat sebesar 70% .</p>", unsafe_allow_html=True) 
+
 with tab7:
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
     # setting kolom
@@ -215,13 +225,5 @@ with tab7:
 #         st.error("Harap Diisi Semua Kolom")
 
 # about page
-if about==True and home==False and prediksi==False:
-    st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
-    st.write('Sistem Prediksi Penyakit Jantung adalah sebuah sistem yang bertujuan untuk memprediksi penyakit jantung dini. Sistem ini dibuat menggunakan bahasa pemrograman python dan library streamlit.')
-    st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Dataset</h4>", unsafe_allow_html=True)
-    st.markdown("<p  color: white;'>Dataset yang digunakan pada sistem ini memiliki <b>9 fitur</b> termasuk kelas, Dataset yang digunakan dalam sistem ini menggunakan data real yang didapatkan disalah satu puskesmas di kecamatan arosbaya kota bangakalan . Dataset yang berjudul <i>Heart Disease</i>, dataset untuk mendeteksi apakah seseorang mengidap Penyakit Jantung atau tidak berdasarkan berbagai faktor seperti <i>BMI</i>,<i>Perokok Aktif</i>,<i>Peminum Alkohol</i>,<i>Kesehatan Fisik</i>,<i>Kesehatan Mental</i>,<i>DiffWalking</i>,<i>Penderita Diabetes</i>,<i>Aktivitas Fisik</i>,class (0/1), fitur yang disebutkan rata-rata string yang sudah diubah mencajadi kategorikal.</p>", unsafe_allow_html=True)
-    st.write('Untuk Fitur kolestrol bisa didapatkan dengan cara mengecek ke dokter atau dengan cara mengukur sendiri dengan menggunakan alat yang disediakan oleh dokter. Untuk fitur blood pressure bisa didapatkan dengan cara mengecek ke dokter atau dengan cara mengukur sendiri dengan menggunakan alat yang disediakan oleh dokter.')
-    st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Tahap preprosessing</h4>", unsafe_allow_html=True)
-    st.write('Sistem ini menggunakan preprosessing data yaitu dengan normalisasi data. Metode normalisasi yang digunakan adalah MinMaxScaler.')
-    st.markdown("<h4 style='text-align: center; color: white; margin:0 ; padding:0;'>Metode yang digunakan</h4>", unsafe_allow_html=True)
-    st.markdown("<p  color: white;'>Pada sistem ini menggunakan model KNN ( <i>K-nearest neighbors algorithm</i> ) dengan parameter <b>K = 11</b> dengan akurasi 75% jika sebelumnya data dinormalisasi terlebih dahulu, namun jika tanpa normalisasi akurasi yang didapat sebesar 70% .</p>", unsafe_allow_html=True) 
+# if about==True and home==False and prediksi==False:
+    
