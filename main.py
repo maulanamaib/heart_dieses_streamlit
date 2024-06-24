@@ -29,10 +29,15 @@ with tab1:
     df = pd.DataFrame(datas)
     df
 with tab2:
+    st.write('Normalisasi')
 with tab3:
+    st.write('Prepocesing')
 with tab4:
+    st.write('Model')
 with tab5:
+    st.write('Accuracy')
 with tab6:
+    st.write('About')
 with tab7:
     st.markdown("<h1 style='text-align: center; color: white; margin:0 ; padding:0;'>Prediksi Penyakit Jantung</h1>", unsafe_allow_html=True)
     # setting kolom
