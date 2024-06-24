@@ -23,7 +23,7 @@ header {visibility: hidden;}
 """
 # insialisasi web
 st.markdown("<p style='text-align: center; color: white; margin:0 ; padding:0;'>MENU</p>", unsafe_allow_html=True)
-kolom = st.columns((2, 9, 9, 8, 7, 8, 7, 8))
+kolom = st.columns((2, 8, 8, 8, 7, 8, 7, 8))
 home = kolom[1].button('Dataset')
 normalisasi = kolom[2].button('normalisasi')
 prepocesing = kolom[3].button('prepocesing')
