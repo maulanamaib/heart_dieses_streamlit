@@ -196,9 +196,11 @@ with tab5:
     '''
     st.code(class10)
     st.write("Accuracy:") 
-    accuracy_score(y_test, y_pred)
+    acc = accuracy_score(y_test, y_pred)
+    acc
     st.write("Classification Report:") 
-    classification_report(y_test, y_pred)
+    clss = classification_report(y_test, y_pred)
+    clss
 with tab6:
     st.write('About')
     st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
