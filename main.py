@@ -195,7 +195,8 @@ with tab5:
     print("Classification Report:\n", classification_report(y_test, y_pred))
     '''
     st.code(class10)
-    st.write("Accuracy:") accuracy_score(y_test, y_pred)
+    st.write("Accuracy:") 
+    accuracy_score(y_test, y_pred)
     st.write("Classification Report:") 
     classification_report(y_test, y_pred)
 with tab6:
