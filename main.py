@@ -187,7 +187,8 @@ with tab5:
     st.code(class9)
     from sklearn.metrics import classification_report, confusion_matrix
     conf_matrix = confusion_matrix(y_test, y_pred)
-    print("Confusion Matrix:\n", conf_matrix)
+    st.write("Confusion Matrix:")
+    conf_matrix
 
     class10 ='''
     print("Accuracy:", accuracy_score(y_test, y_pred))
