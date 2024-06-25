@@ -198,9 +198,7 @@ with tab5:
     st.write("Accuracy:") 
     acc = accuracy_score(y_test, y_pred)
     acc
-    st.write("Classification Report:") 
-    clss = classification_report(y_test, y_pred)
-    clss
+    "Classification Report:\n",classification_report(y_test, y_pred)
 with tab6:
     st.write('About')
     st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
