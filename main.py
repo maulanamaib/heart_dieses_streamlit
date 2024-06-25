@@ -198,10 +198,10 @@ with tab5:
     st.write("Accuracy:") 
     acc = accuracy_score(y_test, y_pred, target_names=target_names, output_dict=True)
     acc
-    target_names = ["class 0", "class 1"]
+    target_name = ["class 0", "class 1"]
     st.dataframe(
         pd.DataFrame(
-            classification_report(y_true, y_pred, target_names=target_names, output_dict=True)
+            classification_report(y_true, y_pred, target_names=target_name, output_dict=True)
         ).transpose()
     )
     "Classification Report:\n", classification_report(y_test, y_pred)
