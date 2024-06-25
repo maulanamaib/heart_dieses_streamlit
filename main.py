@@ -29,13 +29,173 @@ with tab1:
     df = pd.DataFrame(datas)
     df
 with tab2:
+    class1 = '''
     st.write('Normalisasi')
+    df = df.head(5000)
+    df
+    '''
+    st.code(class1)
+    st.write('Normalisasi')
+    df = df.head(5000)
+    df
+    class2 = '''
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import MinMaxScaler
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.metrics import classification_report, accuracy_score
+    from sklearn.model_selection import GridSearchCV
+    from sklearn.feature_selection import SelectKBest, chi2
+    from imblearn.over_sampling import SMOTE
+    from imblearn.under_sampling import RandomUnderSampler
+    from imblearn.pipeline import Pipeline
+    
+    X = df.drop('Penyakit Jantung', axis=1)
+    y = df['Penyakit Jantung']
+    '''
+    st.code(class2)
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+    from sklearn.preprocessing import MinMaxScaler
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.metrics import classification_report, accuracy_score
+    from sklearn.model_selection import GridSearchCV
+    from sklearn.feature_selection import SelectKBest, chi2
+    from imblearn.over_sampling import SMOTE
+    from imblearn.under_sampling import RandomUnderSampler
+    from imblearn.pipeline import Pipeline
+    
+    X = df.drop('Penyakit Jantung', axis=1)
+    y = df['Penyakit Jantung']
+    class3 ='''
+    undersampler = RandomUnderSampler(sampling_strategy='auto', random_state=42)
+    X_resampled, y_resampled = undersampler.fit_resample(X, y)
+    '''
+    st.code(class3)
+    undersampler = RandomUnderSampler(sampling_strategy='auto', random_state=42)
+    X_resampled, y_resampled = undersampler.fit_resample(X, y)
+    
+    class4 = '''
+    scaler = MinMaxScaler()
+    X_scaled = scaler.fit_transform(X_resampled)
+    nama_fitur = X.columns.copy()
+    scaled_fitur = pd.DataFrame(X_scaled,columns=nama_fitur)
+    scaled_fitur
+    '''
+    st.code(class4)
+    scaler = MinMaxScaler()
+    X_scaled = scaler.fit_transform(X_resampled)
+    nama_fitur = X.columns.copy()
+    scaled_fitur = pd.DataFrame(X_scaled,columns=nama_fitur)
+    scaled_fitur
+
+    
 with tab3:
     st.write('Prepocesing')
+    class5 = '''
+    X_train, X_test, y_train, y_test = train_test_split(X_scaled, y_resampled, test_size=0.2, random_state=1)
+    X_train
+    '''
+    st.code(class5)
+    X_train, X_test, y_train, y_test = train_test_split(X_scaled, y_resampled, test_size=0.2, random_state=1)
+    X_train
+    
 with tab4:
     st.write('Model')
+    class6 = '''
+    k_values = list(range(10, 20))
+
+    # Initialize list to store accuracy results
+    accuracy_results = []
+    
+    # Loop over each k value
+    for k in k_values:
+        # K-Nearest Neighbors Classifier
+        knn = KNeighborsClassifier(n_neighbors=k)
+        knn.fit(X_train, y_train)
+    
+        # Make predictions
+        y_pred = knn.predict(X_test)
+    
+        # Calculate accuracy
+        accuracy = accuracy_score(y_test, y_pred)
+    
+        # Append accuracy to results list
+        accuracy_results.append(accuracy)
+    
+    # Create a DataFrame to store results
+    results_df = pd.DataFrame({
+        'K Value': k_values,
+        'Accuracy': accuracy_results
+    })
+    
+    # Print the DataFrame
+    print("Results:")
+    print(results_df)
+    '''
+    st.code(class6)
+    k_values = list(range(10, 20))
+
+    # Initialize list to store accuracy results
+    accuracy_results = []
+    
+    # Loop over each k value
+    for k in k_values:
+        # K-Nearest Neighbors Classifier
+        knn = KNeighborsClassifier(n_neighbors=k)
+        knn.fit(X_train, y_train)
+    
+        # Make predictions
+        y_pred = knn.predict(X_test)
+    
+        # Calculate accuracy
+        accuracy = accuracy_score(y_test, y_pred)
+    
+        # Append accuracy to results list
+        accuracy_results.append(accuracy)
+    
+    # Create a DataFrame to store results
+    results_df = pd.DataFrame({
+        'K Value': k_values,
+        'Accuracy': accuracy_results
+    })
+    
+    # Print the DataFrame
+    print("Results:")
+    print(results_df)
 with tab5:
     st.write('Accuracy')
+    class7 ='''
+    knn = KNeighborsClassifier(n_neighbors=8)
+    knn.fit(X_train, y_train)
+    '''
+    st.code(class7)
+    knn = KNeighborsClassifier(n_neighbors=8)
+    knn.fit(X_train, y_train)
+    
+    class8 ='''
+     y_pred = knn.predict(X_test)
+    '''
+    st.code(class8)
+    y_pred = knn.predict(X_test)
+
+    class9 ='''
+    from sklearn.metrics import classification_report, confusion_matrix
+    conf_matrix = confusion_matrix(y_test, y_pred)
+    print("Confusion Matrix:\n", conf_matrix)
+    '''
+    st.code(class9)
+    from sklearn.metrics import classification_report, confusion_matrix
+    conf_matrix = confusion_matrix(y_test, y_pred)
+    print("Confusion Matrix:\n", conf_matrix)
+
+    class10 ='''
+    print("Accuracy:", accuracy_score(y_test, y_pred))
+    print("Classification Report:\n", classification_report(y_test, y_pred))
+    '''
+    st.code(class10)
+    print("Accuracy:", accuracy_score(y_test, y_pred))
+    print("Classification Report:\n", classification_report(y_test, y_pred))
 with tab6:
     st.write('About')
     st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
