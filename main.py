@@ -161,8 +161,8 @@ with tab4:
     })
     
     # Print the DataFrame
-    print("Results:")
-    print(results_df)
+    st.write("Results:")
+    results_df
 with tab5:
     st.write('Accuracy')
     class7 ='''
@@ -194,8 +194,9 @@ with tab5:
     print("Classification Report:\n", classification_report(y_test, y_pred))
     '''
     st.code(class10)
-    print("Accuracy:", accuracy_score(y_test, y_pred))
-    print("Classification Report:\n", classification_report(y_test, y_pred))
+    st.write("Accuracy:") accuracy_score(y_test, y_pred)
+    st.write("Classification Report:") 
+    classification_report(y_test, y_pred)
 with tab6:
     st.write('About')
     st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
