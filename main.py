@@ -201,10 +201,10 @@ with tab5:
     target_name = ["class 0", "class 1"]
     st.dataframe(
         pd.DataFrame(
-            classification_report(y_true, y_pred, target_names=target_name, output_dict=True)
+            classification_report(y_test, y_pred, target_names=target_name, output_dict=True)
         ).transpose()
     )
-    "Classification Report:\n", classification_report(y_test, y_pred)
+    # "Classification Report:\n", classification_report(y_test, y_pred)
 with tab6:
     st.write('About')
     st.markdown("<h2 style='text-align: center; color: white; margin:0 ; padding:0;'>Tentang Sistem ini</h2>", unsafe_allow_html=True)
