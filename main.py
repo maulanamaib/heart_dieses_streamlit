@@ -196,7 +196,7 @@ with tab5:
     '''
     st.code(class10)
     st.write("Accuracy:") 
-    acc = accuracy_score(y_test, y_pred, target_names=target_names, output_dict=True)
+    acc = accuracy_score(y_test, y_pred)
     acc
     target_name = ["class 0", "class 1"]
     st.dataframe(
