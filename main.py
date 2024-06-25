@@ -25,7 +25,7 @@ header {visibility: hidden;}
 tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs(["Dataset", "Normalisasi", "Prepocesing", "model", "Accuracy", "About", "Prediksi"])
 with tab1:
     st.write('Dataset')
-    datas = pd.read_csv("data_fix1.csv", sep=";")
+    datas = pd.read_csv("data_fix1.csv")
     df = pd.DataFrame(datas)
     df
 with tab2:
