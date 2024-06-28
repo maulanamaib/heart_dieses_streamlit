@@ -113,6 +113,7 @@ with tab4:
     # Fit model dengan data
     grid_search.fit(X_train, y_train)
     '''
+    st.code(class6)
     from sklearn.model_selection import GridSearchCV
     knn = KNeighborsClassifier()
     param_grid = {'n_neighbors': list(range(1, 31))}
@@ -131,7 +132,7 @@ with tab5:
     knn.fit(X_train, y_train)
     '''
     st.code(class7)
-    knn = KNeighborsClassifier(n_neighbors=8)
+    knn = KNeighborsClassifier(n_neighbors=21)
     knn.fit(X_train, y_train)
     
     class8 ='''
