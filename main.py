@@ -103,66 +103,27 @@ with tab3:
 with tab4:
     st.write('Model')
     class6 = '''
-    k_values = list(range(10, 20))
-
-    # Initialize list to store accuracy results
-    accuracy_results = []
+    from sklearn.model_selection import GridSearchCV
+    knn = KNeighborsClassifier()
+    param_grid = {'n_neighbors': list(range(1, 31))}
     
-    # Loop over each k value
-    for k in k_values:
-        # K-Nearest Neighbors Classifier
-        knn = KNeighborsClassifier(n_neighbors=k)
-        knn.fit(X_train, y_train)
+    # Lakukan grid search dengan 5-fold cross-validation
+    grid_search = GridSearchCV(knn, param_grid, cv=5, scoring='accuracy')
     
-        # Make predictions
-        y_pred = knn.predict(X_test)
-    
-        # Calculate accuracy
-        accuracy = accuracy_score(y_test, y_pred)
-    
-        # Append accuracy to results list
-        accuracy_results.append(accuracy)
-    
-    # Create a DataFrame to store results
-    results_df = pd.DataFrame({
-        'K Value': k_values,
-        'Accuracy': accuracy_results
-    })
-    
-    # Print the DataFrame
-    print("Results:")
-    print(results_df)
+    # Fit model dengan data
+    grid_search.fit(X_train, y_train)
     '''
-    st.code(class6)
-    k_values = list(range(10, 20))
-
-    # Initialize list to store accuracy results
-    accuracy_results = []
+    from sklearn.model_selection import GridSearchCV
+    knn = KNeighborsClassifier()
+    param_grid = {'n_neighbors': list(range(1, 31))}
     
-    # Loop over each k value
-    for k in k_values:
-        # K-Nearest Neighbors Classifier
-        knn = KNeighborsClassifier(n_neighbors=k)
-        knn.fit(X_train, y_train)
+    # Lakukan grid search dengan 5-fold cross-validation
+    grid_search = GridSearchCV(knn, param_grid, cv=5, scoring='accuracy')
     
-        # Make predictions
-        y_pred = knn.predict(X_test)
-    
-        # Calculate accuracy
-        accuracy = accuracy_score(y_test, y_pred)
-    
-        # Append accuracy to results list
-        accuracy_results.append(accuracy)
-    
-    # Create a DataFrame to store results
-    results_df = pd.DataFrame({
-        'K Value': k_values,
-        'Accuracy': accuracy_results
-    })
-    
-    # Print the DataFrame
-    st.write("Results:")
-    results_df
+    # Fit model dengan data
+    grid_search.fit(X_train, y_train)
+    "Best parameter (k):", grid_search.best_params_
+    "Best cross-validation score:", grid_search.best_score_
 with tab5:
     st.write('Accuracy')
     class7 ='''
