@@ -28,6 +28,6 @@ def normal(x):
 
 # metode with normalization
 def knn(x):
-    return joblib.load('model/best_knn_model.pkl').predict(x)
+    return joblib.load('model/modelKNN21.pkl').predict(x)
     # print(x)
    
