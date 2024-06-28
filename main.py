@@ -128,7 +128,7 @@ with tab4:
 with tab5:
     st.write('Accuracy')
     class7 ='''
-    knn = KNeighborsClassifier(n_neighbors=8)
+    knn = KNeighborsClassifier(n_neighbors=21)
     knn.fit(X_train, y_train)
     '''
     st.code(class7)
