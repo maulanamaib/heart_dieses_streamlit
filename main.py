@@ -67,9 +67,17 @@ with tab2:
     
     X = df.drop('Penyakit Jantung', axis=1)
     y = df['Penyakit Jantung']
-    
-    undersampler = RandomUnderSampler(sampling_strategy='auto', random_state=42)
-    X_resampled, y_resampled = undersampler.fit_resample(X, y)
+    class3='''
+    from imblearn.over_sampling import SMOTE
+
+    smote = SMOTE(sampling_strategy='auto', random_state=42)
+    X_resampled, y_resampled = smote.fit_resample(scaled_fitur, y)
+    '''
+    from imblearn.over_sampling import SMOTE
+
+    smote = SMOTE(sampling_strategy='auto', random_state=42)
+    X_resampled, y_resampled = smote.fit_resample(scaled_fitur, y)
+
     
     class4 = '''
     scaler = MinMaxScaler()
