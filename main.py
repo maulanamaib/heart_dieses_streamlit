@@ -73,6 +73,7 @@ with tab2:
     smote = SMOTE(sampling_strategy='auto', random_state=42)
     X_resampled, y_resampled = smote.fit_resample(scaled_fitur, y)
     '''
+    st.code(class3)
     from imblearn.over_sampling import SMOTE
 
     smote = SMOTE(sampling_strategy='auto', random_state=42)
