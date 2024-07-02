@@ -67,11 +67,7 @@ with tab2:
     
     X = df.drop('Penyakit Jantung', axis=1)
     y = df['Penyakit Jantung']
-    class3 ='''
-    undersampler = RandomUnderSampler(sampling_strategy='auto', random_state=42)
-    X_resampled, y_resampled = undersampler.fit_resample(X, y)
-    '''
-    st.code(class3)
+    
     undersampler = RandomUnderSampler(sampling_strategy='auto', random_state=42)
     X_resampled, y_resampled = undersampler.fit_resample(X, y)
     
